@@ -1138,10 +1138,10 @@ proc create_hier_cell_clocktreeMTS { parentCell nameHier } {
     CONFIG.CLKIN2_JITTER_PS {100.000} \
     CONFIG.CLKIN2_UI_JITTER {100.000} \
     CONFIG.CLKOUT1_DRIVES {Buffer} \
-    CONFIG.CLKOUT1_JITTER {75.070} \
+    CONFIG.CLKOUT1_JITTER {89.182} \
     CONFIG.CLKOUT1_MATCHED_ROUTING {true} \
     CONFIG.CLKOUT1_PHASE_ERROR {72.706} \
-    CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {307.20} \
+    CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {122.88} \
     CONFIG.CLKOUT2_DRIVES {Buffer} \
     CONFIG.CLKOUT2_JITTER {85.518} \
     CONFIG.CLKOUT2_MATCHED_ROUTING {true} \
@@ -1152,7 +1152,7 @@ proc create_hier_cell_clocktreeMTS { parentCell nameHier } {
     CONFIG.CLKOUT3_JITTER {75.070} \
     CONFIG.CLKOUT3_PHASE_ERROR {72.706} \
     CONFIG.CLKOUT3_REQUESTED_OUT_FREQ {307.20} \
-    CONFIG.CLKOUT3_USED {false} \
+    CONFIG.CLKOUT3_USED {true} \
     CONFIG.CLKOUT4_DRIVES {Buffer} \
     CONFIG.CLKOUT5_DRIVES {Buffer} \
     CONFIG.CLKOUT6_DRIVES {Buffer} \
@@ -1165,14 +1165,14 @@ proc create_hier_cell_clocktreeMTS { parentCell nameHier } {
     CONFIG.MMCM_CLKFBOUT_MULT_F {12.500} \
     CONFIG.MMCM_CLKIN1_PERIOD {8.138} \
     CONFIG.MMCM_CLKIN2_PERIOD {10.000} \
-    CONFIG.MMCM_CLKOUT0_DIVIDE_F {5.000} \
+    CONFIG.MMCM_CLKOUT0_DIVIDE_F {12.500} \
     CONFIG.MMCM_CLKOUT1_DIVIDE {10} \
-    CONFIG.MMCM_CLKOUT2_DIVIDE {1} \
+    CONFIG.MMCM_CLKOUT2_DIVIDE {5} \
     CONFIG.MMCM_COMPENSATION {AUTO} \
     CONFIG.MMCM_DIVCLK_DIVIDE {1} \
     CONFIG.MMCM_REF_JITTER1 {0.000} \
     CONFIG.MMCM_REF_JITTER2 {0.010} \
-    CONFIG.NUM_OUT_CLKS {2} \
+    CONFIG.NUM_OUT_CLKS {3} \
     CONFIG.OPTIMIZE_CLOCKING_STRUCTURE_EN {false} \
     CONFIG.PRIMITIVE {MMCM} \
     CONFIG.PRIM_IN_FREQ {122.88} \
@@ -1216,7 +1216,8 @@ proc create_hier_cell_clocktreeMTS { parentCell nameHier } {
   # Create port connections
   connect_bd_net -net IBUFDS_PL_CLK_IBUF_OUT [get_bd_pins IBUFDS_PL_CLK/IBUF_OUT] [get_bd_pins BUFG_PL_CLK/BUFG_I]
   connect_bd_net -net IBUFDS_SYSREF_IBUF_OUT [get_bd_pins IBUFDS_SYSREF/IBUF_OUT] [get_bd_pins synchronizeSYSREF/src_in]
-  connect_bd_net -net MTSclkwiz_clk_out1 [get_bd_pins MTSclkwiz/clk_out1] [get_bd_pins synchronizeSYSREF/dest_clk] [get_bd_pins clkRF] [get_bd_pins RFingressReset/slowest_sync_clk]
+  connect_bd_net -net MTSclkwiz_clk_out1 [get_bd_pins MTSclkwiz/clk_out1] [get_bd_pins synchronizeSYSREF/dest_clk]
+  connect_bd_net -net MTSclkwiz_clk_out3 [get_bd_pins MTSclkwiz/clk_out3] [get_bd_pins RFingressReset/slowest_sync_clk] [get_bd_pins clkRF]
   connect_bd_net -net MTSclkwiz_interrupt [get_bd_pins MTSclkwiz/interrupt] [get_bd_pins interrupt]
   connect_bd_net -net RFegressReset_peripheral_aresetn [get_bd_pins RFegressReset/peripheral_aresetn] [get_bd_pins egress_aresetn]
   connect_bd_net -net RFingressReset_peripheral_aresetn [get_bd_pins RFingressReset/peripheral_aresetn] [get_bd_pins ingress_aresetn]
@@ -2651,8 +2652,8 @@ Port;FD4A0000;FD4AFFFF;1|FPD;DPDMA;FD4C0000;FD4CFFFF;1|FPD;DDR_XMPU5_CFG;FD05000
    "ActiveEmotionalView":"Default View",
    "Color Coded_ScaleFactor":"0.577797",
    "Color Coded_TopLeft":"893,-275",
-   "Default View_ScaleFactor":"0.709906",
-   "Default View_TopLeft":"544,618",
+   "Default View_ScaleFactor":"0.347918",
+   "Default View_TopLeft":"-566,3",
    "Display-PortTypeClock":"true",
    "Display-PortTypeInterrupt":"true",
    "Display-PortTypeOthers":"true",
