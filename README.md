@@ -7,7 +7,8 @@ v3.0.1](https://github.com/Xilinx/PYNQ/releases).  Multi-tile synchronization
 arrays, massive MIMO and more.  This overlay demonstrates 4GS MTS capabilities
 by using a waveform generator to broadcast out two DAC tiles.  The DAC channels
 are wired to loopback to ADCs.  ADC samples are captured with and without MTS
-enabled. The effect is shown in the figure below.
+enabled. The effect is shown in the figure below. The frequencies are lower in
+the ZCU216 as the ADC's maximum frequency is 2.5GHz there.
 
 <img src="./images/MTSbenefit.png" width="90%"/>
 
