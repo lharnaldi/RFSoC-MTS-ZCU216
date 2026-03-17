@@ -93,8 +93,8 @@ Users may re-run the notebook with different waveform properties and adjust the
 waveform plots. Once MTS is enabled it will stay active until the overlay is
 reloaded or notebook re-run.
 
-## Rebuilding the MTS Overlay To rebuild the provided bitstreams Vivado 2023.1
-is required.
+## Rebuilding the MTS Overlay 
+To rebuild the provided bitstreams Vivado 2023.1 is required.
 
 ### Vivado
 Two Vivado board projects are provided called "mts".  It is located under the
